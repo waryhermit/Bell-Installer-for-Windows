@@ -1,0 +1,9 @@
+{
+   "_id": "_design/bell",
+   "_rev": "4-cfde41384b4b340ffb37c3f7e238b99a",
+   "views": {
+       "FeedbackByResourceId": {
+           "map": "function (doc) {\n      if (doc.kind == 'Feedback' && doc.resourceId) {\n        emit(doc.resourceId, true)\n      }\n    }"
+       }
+   }
+}

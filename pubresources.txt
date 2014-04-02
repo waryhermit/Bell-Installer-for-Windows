@@ -1,0 +1,15 @@
+{
+   "_id": "_design/bell",
+   "language": "javascript",
+   "views": {
+       "sortresources": {
+           "map": "function (doc) {\n      if (doc.title) {\n        emit(doc.title, true)\n      }\n    }"
+       },
+       "resourceswithstartkey": {
+           "map": "function (doc) {\n      if (doc.title) {\n        emit(doc.title, true)\n      }\n    }"
+       },
+       "listCollection": {
+           "map": "function (doc) {\n    if (doc.Tag && doc.kind == 'Resource') {\n\n        if (Array.isArray(doc.Tag)) {\n            if (doc.Tag.length > 0) {\n                for (var idx in doc.Tag) {\n                    emit(doc.Tag[idx], doc);\n                }\n            }\n        } else {\n            emit(doc.Tag, doc)\n        }\n    }\n      if(doc.subject && doc.kind == 'Resource')\n    {\n    \n\n        if (Array.isArray(doc.subject)) {\n            if (doc.subject.length > 0) {\n                for (var idx in doc.subject) {\n                    emit(doc.subject[idx], doc);\n                }\n            }\n        } else {\n            emit(doc.subject, doc)\n        }\n    \n    \n    }\n     if(doc.Level && doc.kind == 'Resource')\n    {\n    \n\n        if (Array.isArray(doc.Level)) {\n            if (doc.Level.length > 0) {\n                for (var idx in doc.Level) {\n                    emit(doc.Level[idx], doc);\n                }\n            }\n        } else {\n            emit(doc.Level, doc)\n        }\n    \n    \n    }\n         if(doc.Medium && doc.kind == 'Resource')\n    {\n    emit(doc.Medium, doc)\n    }\n}"
+       }
+   }
+}
