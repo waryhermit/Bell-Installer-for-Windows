@@ -1,9 +1,0 @@
-{
-   "_id": "_design/bell",
-   "views": {
-       "GetCourses": {
-           "map": "function (doc) {\n      if (doc.members) {\n   for(var x=0;x<doc.members.length;x++){     emit(doc.members[x], true)}\n      }\n    }"
-       }
-   },
-   "kind": "Group"
-}
