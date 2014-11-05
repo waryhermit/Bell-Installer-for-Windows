@@ -1,0 +1,1 @@
+BeLL-Apps\node_modules\.bin\couchapp push BeLL-Apps\app.js http://127.0.0.1:5984/apps
