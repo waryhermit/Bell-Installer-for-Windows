@@ -80,6 +80,7 @@ $(function () {
             this.form.commit();
             this.model.set("Level", null);
             this.model.set("subject", null);
+            this.model.set("title", "BeLL - welcome video");
             var formContext = this;
             // id a new video file has been linked/uploaded, change the "addedBy" field to have the name of the current user
             // if no new file has been linked/uploaded, don't take any action
@@ -140,7 +141,7 @@ $(function () {
             // name of the video currently being used as welcome video
             this.$el.append('<form method="post" id="fileAttachment"></form>');
             this.$el.find("#fileAttachment").append('<label for="_attachments">Upload Welcome Video</label>');
-            this.$el.find("#fileAttachment").append('<input type="file" name="_attachments" id="_attachments" style="line-height: 28px;" multiple="multiple" label=" :" />');
+            this.$el.find("#fileAttachment").append('<input type="file" name="_attachments" id="_attachments" style="line-height: 28px;" label=" :" />');
             this.$el.find("#fileAttachment").append('<input class="rev" type="hidden" name="_rev">');
             this.$el.append('<button class="addNation-btn btn btn-success" id="saveUpdatedWelcomeVideoForm">Submit</button>');
             this.$el.append('<a class="btn btn-danger" id="cancel">Cancel</a>');
