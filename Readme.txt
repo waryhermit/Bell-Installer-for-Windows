@@ -1,6 +1,6 @@
-# Installation Steps for Bell-Apps on Windows Machine
+Installation Steps for Bell-Apps on Windows Machine
 
-## Pre-requisites:
+Pre-requisites:
     1. Make sure you have Mozilla Firefox installed in your system.
     2. Uninstall CouchDB (Apache CouchDB) and Node.js from the system if they are already installed.
         - Start >>> Control Panel >>> Uninstall a Program
@@ -11,7 +11,7 @@
         - Select "Cookies" and "Cache" and make sure that other items you want to keep are not selected.
         - Click "Clear Now" to clear the cookies and close the Clear Recent History window.
 
-## Running the "BeLL-Offline-Installer":
+Running the "BeLL-Offline-Installer":
     1. Run the file named "install.bat" by double clicking on it.
     2. Node.js installation prompt comes up requiring you to follow the wizard to install this dependency.
     3. Couchdb installation prompt comes up requiring you to follow the wizard to install this dependency.
