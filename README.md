@@ -14,7 +14,12 @@
 1. Run the file named **install.bat** by double clicking on it
 2. Node.js installation prompt comes up requiring you to follow the wizard to install this dependency
 3. Couchdb installation prompt comes up requiring you to follow the wizard to install this dependency
-4. Script pauses and prompts you to indicate if you wish to include or exclude starter data in the installation
-	- Respond with "yes" if you wish to have initial courses and resources bundle installed along with the application
-	- Respond with "no" if you wish to have only the application installed
-5. A new tab in Firefox will be initiated as the last step carried out by the Bell-Apps installation with the application launched in that tab.
+4. Wait for few minutes and let the installer complete its homework
+5. A new tab in Firefox will be initiated with the Bell-App launched in it
+6. Sign-in with admin credentials and system will route to configuration Window that requires the following fields
+	- Name - Community name assigned by the OLE
+	- Code - Community-Specific Code assigned by the OLE
+	- Type - Bell Type i.e. Nation or Community (Keep it untouched)
+	- Nation Name - The Name of Nation heading your community
+	- Nation URL - The URL of Head Nation provided by the OLE
+7. After filling these fields, click "Save Configurations" and the System will route to Home Page
