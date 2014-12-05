@@ -1,0 +1,4 @@
+[submodule "BeLL-Apps"]
+	path = BeLL-Apps
+	url = https://github.com/open-learning-exchange/BeLL-Apps.git
+	branch = dev
