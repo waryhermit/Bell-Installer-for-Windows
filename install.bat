@@ -73,9 +73,9 @@ curl -X PUT http://localhost:5984/shelf
 curl -X PUT http://localhost:5984/usermeetups
 
 :: add bare minimal required data to couchdb for launching bell-apps smoothly
-curl -d @Starter_Data\languages.txt -H "Content-Type: application/json" -X POST http://localhost:5984/languages
-curl -d @Starter_Data\configurations.txt -H "Content-Type: application/json" -X POST http://localhost:5984/configurations
-curl -d @Starter_Data\admin.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
+curl -d @Config_Files\languages.txt -H "Content-Type: application/json" -X POST http://localhost:5984/languages
+curl -d @Config_Files\configurations.txt -H "Content-Type: application/json" -X POST http://localhost:5984/configurations
+curl -d @Config_Files\admin.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
 
 :: add design docs to all dbs, they are used/needed at different points in the application
 curl -d @Design_Docs\design_doc_activitylog.txt -H "Content-Type: application/json" -X POST http://localhost:5984/activitylog
