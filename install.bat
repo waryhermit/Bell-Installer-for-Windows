@@ -137,6 +137,7 @@ curl -d @Design_Docs\design_doc_collectionlist.txt -H "Content-Type: application
 
 
 :ContinueInstall
+SET PATH=%PATH%;C:\Users\%USERNAME%\AppData\Roaming\npm;C:\Program Files (x86)\nodejs\
 call create_desktop_icon.bat
 call push_code_to_apps_db.bat
 start firefox http://127.0.0.1:5984/apps/_design/bell/MyApp/index.html#login
