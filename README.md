@@ -27,6 +27,7 @@
 
 ## QA steps
 Any time there is new code for QA...
+
 1. tag the BeLL-Apps repository
 2. modify `build.bat` in Bell-Install-for-Windows repository
 3. tag the Bell-Installer-for-Windows repository
