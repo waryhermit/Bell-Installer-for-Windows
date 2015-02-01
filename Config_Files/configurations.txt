@@ -1,12 +1,3 @@
 {
-    "name”:”Community-name”,
-    "nationName”:”somaliabell”,
-    "code”:”community-name-in-small-lettercase”,
-    "type":"community",
-    "nationUrl”:”somaliabell.ole.org:5987”,
-    "version":"0.11.17”,
-    "notes”:”Dadab Community Bell”,
-    "availableLanguages":["English","French","Arabic","Urdu"],
-    "currentLanguage":"English"
+    "name":"Community-name", "nationName":"somaliabell", "code":"community-name-in-small-lettercase", "type":"community", "nationUrl":"somaliabell.ole.org:5987", "version":"v0.11.17", "notes":"Dadab Community Bell", "availableLanguages":["English","French","Arabic","Urdu"], "currentLanguage":"English"
 }
-
