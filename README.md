@@ -28,9 +28,10 @@
 ## QA steps
 Any time there is new code for QA...
   
-1. tag the BeLL-Apps repository  
-2. modify `build.bat` in Bell-Install-for-Windows repository  
-3. tag the Bell-Installer-for-Windows repository  
-4. Download the tag release code from the Bell-Installer-for-Windows onto a windows machine  
-5. Double click on `build.bat`, verify the `BeLL-Apps` folder now has code  
-6. Double click on the `install.bat` file, verify the install  
+1. tag the BeLL-Apps repository.
+2. modify `build.bat` in Bell-Install-for-Windows repository.
+3. tag the Bell-Installer-for-Windows repository. 
+4. Download the tag release code from the Bell-Installer-for-Windows onto a windows machine, unzip it.
+5. If you don't have 7-zip installed on your machine, run `7z920.exe` to install it.
+5. Double click on `build.bat`, verify the `BeLL-Apps` folder now has code  .
+6. Double click on the `install.bat` file, verify the install.
