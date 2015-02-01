@@ -1,2 +1,12 @@
-{"name":"communityXYZ","nationName":"nationXYZ","code":"comm","type":"community","nationUrl":"olenationXYZ.com","version":"0.10.0","notes":"this is testing .....asdf","availableLanguages":["English","French","Arabic","Urdu"],"currentLanguage":"English"}
+{
+    "name”:”Community-name”,
+    "nationName”:”somaliabell”,
+    "code”:”community-name-in-small-lettercase”,
+    "type":"community",
+    "nationUrl”:”somaliabell.ole.org:5987”,
+    "version":"0.11.17”,
+    "notes”:”Dadab Community Bell”,
+    "availableLanguages":["English","French","Arabic","Urdu"],
+    "currentLanguage":"English"
+}
 
