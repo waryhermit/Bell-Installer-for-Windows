@@ -23,3 +23,13 @@
 	- Nation Name - The Name of Nation heading your community
 	- Nation URL - The URL of Head Nation provided by the OLE
 7. After filling these fields, click "Save Configurations" and the System will route to Home Page
+
+
+## QA steps
+Any time there is new code for QA...
+1. tag the BeLL-Apps repository
+2. modify `build.bat` in Bell-Install-for-Windows repository
+3. tag the Bell-Installer-for-Windows repository
+4. Download the tag release code from the Bell-Installer-for-Windows onto a windows machine
+5. Double click on `build.bat`, verify the `BeLL-Apps` folder now has code
+6. Double click on the `install.bat` file, verify the install
