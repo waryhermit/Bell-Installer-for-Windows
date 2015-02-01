@@ -25,12 +25,13 @@
 7. After filling these fields, click "Save Configurations" and the System will route to Home Page
 
 
-## QA steps
+## Release Instructions 
 Any time there is new code for QA...
   
 1. tag the BeLL-Apps repository.
 2. modify `build.bat` in Bell-Install-for-Windows repository.
-3. tag the Bell-Installer-for-Windows repository. 
-4. Download the tag release code from the Bell-Installer-for-Windows onto a windows machine, unzip it.
-5. Double click on `build.bat`, verify the `BeLL-Apps` folder now has code  .
-6. Double click on the `install.bat` file, verify the install.
+3. modify the BeLL-Apps version in `Config_Files/configurations.txt`, do not add a `v` to the version otherwise the updater will always fail.
+4. tag the Bell-Installer-for-Windows repository. 
+5. Download the tag release code from the Bell-Installer-for-Windows onto a windows machine, unzip it.
+6. Double click on `build.bat`, verify the `BeLL-Apps` folder now has code  .
+7. Double click on the `install.bat` file, verify the install.
