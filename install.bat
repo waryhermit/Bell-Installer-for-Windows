@@ -1,11 +1,3 @@
-@echo off
-:: run node.js executable/installer wizard
-Executables\node-v0.10.26-x86.msi
-:: run couchdb executable/installer wizard
-Executables\setup-couchdb-1.5.0_R16B02.exe
-timeout 2
-:: run couchdb server, in case it was not installed as a service by user
-cmd /c Executables\startcouchdb.bat
 
 :: configure couchdb to be accessible to any node on the LAN
 curl -X PUT http://localhost:5984/_config/httpd/bind_address -d "\"0.0.0.0\""
@@ -74,7 +66,7 @@ curl -X PUT http://localhost:5984/usermeetups
 
 :: add bare minimal required data to couchdb for launching bell-apps smoothly
 curl -d @Config_Files\languages.txt -H "Content-Type: application/json" -X POST http://localhost:5984/languages
-curl -d @Config_Files\configurations.txt -H "Content-Type: application/json" -X POST http://localhost:5984/configurations
+curl -d @BeLL-Apps\init_docs\ConfigurationsDoc-Community.txt -H "Content-Type: application/json" -X POST http://localhost:5984/configurations
 curl -d @Config_Files\admin.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
 
 :: add design docs to all dbs, they are used/needed at different points in the application
