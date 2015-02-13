@@ -8,4 +8,5 @@ netsh advfirewall firewall add rule name="CouchDB/HTTPS" dir=out action=allow pr
 timeout 2
 netsh advfirewall firewall add rule name="CouchDB/HTTPS" dir=in action=allow protocol=TCP localport=6984
 timeout 2
-(Get-Content "C:\Program Files (x86)\Apache Software Foundation\CouchDB\etc\couchdb\default.ini") | Foreach-Object {$_ -replace '127.0.0.1','0.0.0.0'}  | Out-File "C:\Program Files (x86)\Apache Software Foundation\CouchDB\etc\couchdb\default.ini"
+PowerShell.exe -NoProfile -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dpn0.ps1""' -Verb RunAs}"
+PAUSE
