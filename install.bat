@@ -1,3 +1,15 @@
+@echo off
+
+:: run node.js executable/installer wizard
+Executables\node-v0.10.26-x86.msi
+
+:: run couchdb executable/installer wizard
+Executables\setup-couchdb-1.5.0_R16B02.exe
+
+timeout 2
+
+:: run couchdb server, in case it was not installed as a service by user
+cmd /c Executables\startcouchdb.bat
 
 :: configure couchdb to be accessible to any node on the LAN
 curl -X PUT http://localhost:5984/_config/httpd/bind_address -d "\"0.0.0.0\""
@@ -95,13 +107,6 @@ curl -d @Design_Docs\design_doc_resources.txt -H "Content-Type: application/json
 curl -d @Design_Docs\design_doc_shelf.txt -H "Content-Type: application/json" -X POST http://localhost:5984/shelf
 curl -d @Design_Docs\design_doc_usermeetups.txt -H "Content-Type: application/json" -X POST http://localhost:5984/usermeetups
 
-:: take user input to decide if starter data is to be included or not in this installation
-:: :PromptForStarterDataAgain
-::set /p include_starter_data=Do you wish to include starter data with this install (yes/no):
-::if /I %include_starter_data%==yes goto AddStarterData
-::if /I %include_starter_data%==no goto ContinueInstall
-:: ::if not %include_starter_data%==no && if not %include_starter_data%==yes goto PromptForStarterDataAgain
-::goto PromptForStarterDataAgain
 :AddStarterData
 :: delete databases whose starter data is to be included, and then just copy their db files into the dbs directory of target couchdb
 curl -X DELETE http://localhost:5984/collectionlist
@@ -125,8 +130,6 @@ curl -d @Design_Docs\design_doc_resources.txt -H "Content-Type: application/json
 curl -d @Design_Docs\design_doc_groups.txt -H "Content-Type: application/json" -X POST http://localhost:5984/groups
 curl -d @Design_Docs\design_doc_coursestep.txt -H "Content-Type: application/json" -X POST http://localhost:5984/coursestep
 curl -d @Design_Docs\design_doc_collectionlist.txt -H "Content-Type: application/json" -X POST http://localhost:5984/collectionlist
-
-
 
 :ContinueInstall
 SET PATH=%PATH%;C:\Users\%USERNAME%\AppData\Roaming\npm;C:\Program Files (x86)\nodejs\
