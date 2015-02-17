@@ -1,3 +1,15 @@
+@echo off
+
+:: run node.js executable/installer wizard
+Executables\node-v0.10.26-x86.msi
+
+:: run couchdb executable/installer wizard
+Executables\setup-couchdb-1.5.0_R16B02.exe
+
+timeout 2
+
+:: run couchdb server, in case it was not installed as a service by user
+cmd /c Executables\startcouchdb.bat
 
 :: configure couchdb to be accessible to any node on the LAN
 curl -X PUT http://localhost:5984/_config/httpd/bind_address -d "\"0.0.0.0\""
@@ -95,6 +107,7 @@ curl -d @Design_Docs\design_doc_resources.txt -H "Content-Type: application/json
 curl -d @Design_Docs\design_doc_shelf.txt -H "Content-Type: application/json" -X POST http://localhost:5984/shelf
 curl -d @Design_Docs\design_doc_usermeetups.txt -H "Content-Type: application/json" -X POST http://localhost:5984/usermeetups
 
+<<<<<<< HEAD
 :: take user input to decide if starter data is to be included or not in this installation
 
 :: :PromptForStarterDataAgain
@@ -104,6 +117,8 @@ curl -d @Design_Docs\design_doc_usermeetups.txt -H "Content-Type: application/js
 :: ::if not %include_starter_data%==no && if not %include_starter_data%==yes goto PromptForStarterDataAgain
 ::goto PromptForStarterDataAgain
 
+=======
+>>>>>>> cc9438507915c2cceeb0300f92d55a0e93708bbf
 :AddStarterData
 :: delete databases whose starter data is to be included, and then just copy their db files into the dbs directory of target couchdb
 ::curl -X DELETE http://localhost:5984/collectionlist
@@ -120,6 +135,7 @@ curl -d @Design_Docs\design_doc_usermeetups.txt -H "Content-Type: application/js
 ::copy /y %starter_data_folder%groups.couch %couchdb_databases_folder%groups.couch
 ::copy /y %starter_data_folder%coursestep.couch %couchdb_databases_folder%coursestep.couch
 
+<<<<<<< HEAD
 :: if "Starter_Data" folder did not have any data in it, then we need to create the databases again
 ::curl -X PUT http://localhost:5984/collectionlist
 ::curl -X PUT http://localhost:5984/coursestep
@@ -132,6 +148,8 @@ curl -d @Design_Docs\design_doc_usermeetups.txt -H "Content-Type: application/js
 ::curl -d @Design_Docs\design_doc_coursestep.txt -H "Content-Type: application/json" -X POST http://localhost:5984/coursestep
 ::curl -d @Design_Docs\design_doc_collectionlist.txt -H "Content-Type: application/json" -X POST http://localhost:5984/collectionlist
 
+=======
+>>>>>>> cc9438507915c2cceeb0300f92d55a0e93708bbf
 :ContinueInstall
 SET PATH=%PATH%;C:\Users\%USERNAME%\AppData\Roaming\npm;C:\Program Files (x86)\nodejs\
 call create_desktop_icon.bat
