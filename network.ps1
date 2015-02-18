@@ -1,0 +1,1 @@
+(Get-Content "C:\Program Files (x86)\Apache Software Foundation\CouchDB\etc\couchdb\default.ini") | Foreach-Object {$_ -replace '127.0.0.1','0.0.0.0'}  | Out-File "C:\Program Files (x86)\Apache Software Foundation\CouchDB\etc\couchdb\default.ini"

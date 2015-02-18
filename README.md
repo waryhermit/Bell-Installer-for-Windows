@@ -35,3 +35,4 @@ Any time there is new code for QA...
 5. Download the tag release code from the Bell-Installer-for-Windows onto a windows machine, unzip it.
 6. Double click on `build.bat`, verify the `BeLL-Apps` folder now has code  .
 7. Double click on the `install.bat` file, verify the install.
+8. Right click on the `network.bat` file and click "Run as administrator"
