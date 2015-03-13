@@ -81,33 +81,17 @@ curl -d @BeLL-Apps\init_docs\languages.txt -H "Content-Type: application/json" -
 curl -d @BeLL-Apps\init_docs\ConfigurationsDoc-Community.txt -H "Content-Type: application/json" -X POST http://localhost:5984/configurations
 curl -d @BeLL-Apps\init_docs\admin.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
 
-:: add design docs to all dbs, they are used/needed at different points in the application
-curl -d @Design_Docs\design_doc_activitylog.txt -H "Content-Type: application/json" -X POST http://localhost:5984/activitylog
-curl -d @Design_Docs\design_doc_assignments.txt -H "Content-Type: application/json" -X POST http://localhost:5984/assignments
-curl -d @Design_Docs\design_doc_assignmentpaper.txt -H "Content-Type: application/json" -X POST http://localhost:5984/assignmentpaper
-curl -d @Design_Docs\design_doc_calendar.txt -H "Content-Type: application/json" -X POST http://localhost:5984/calendar
-curl -d @Design_Docs\design_doc_collectionlist.txt -H "Content-Type: application/json" -X POST http://localhost:5984/collectionlist
-curl -d @Design_Docs\design_doc_communityreports.txt -H "Content-Type: application/json" -X POST http://localhost:5984/communityreports
-curl -d @Design_Docs\design_doc_courseschedule.txt -H "Content-Type: application/json" -X POST http://localhost:5984/courseschedule
-curl -d @Design_Docs\design_doc_coursestep.txt -H "Content-Type: application/json" -X POST http://localhost:5984/coursestep
-curl -d @Design_Docs\design_doc_feedback.txt -H "Content-Type: application/json" -X POST http://localhost:5984/feedback
-curl -d @Design_Docs\design_doc_groups.txt -H "Content-Type: application/json" -X POST http://localhost:5984/groups
-curl -d @Design_Docs\design_doc_invitations.txt -H "Content-Type: application/json" -X POST http://localhost:5984/invitations
-curl -d @Design_Docs\design_doc_mail.txt -H "Content-Type: application/json" -X POST http://localhost:5984/mail
-curl -d @Design_Docs\design_doc_meetups.txt -H "Content-Type: application/json" -X POST http://localhost:5984/meetups
-curl -d @Design_Docs\design_doc_membercourseprogress.txt -H "Content-Type: application/json" -X POST http://localhost:5984/membercourseprogress
-curl -d @Design_Docs\design_doc_members.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
-curl -d @Design_Docs\design_doc_nationreports.txt -H "Content-Type: application/json" -X POST http://localhost:5984/nationreports
-curl -d @Design_Docs\design_doc_publicationdistribution.txt -H "Content-Type: application/json" -X POST http://localhost:5984/publicationdistribution
-curl -d @Design_Docs\design_doc_publications.txt -H "Content-Type: application/json" -X POST http://localhost:5984/publications
-curl -d @Design_Docs\design_doc_report.txt -H "Content-Type: application/json" -X POST http://localhost:5984/report
-curl -d @Design_Docs\design_doc_requests.txt -H "Content-Type: application/json" -X POST http://localhost:5984/requests
-curl -d @Design_Docs\design_doc_resourcefrequency.txt -H "Content-Type: application/json" -X POST http://localhost:5984/resourcefrequency
-curl -d @Design_Docs\design_doc_resources.txt -H "Content-Type: application/json" -X POST http://localhost:5984/resources
-curl -d @Design_Docs\design_doc_shelf.txt -H "Content-Type: application/json" -X POST http://localhost:5984/shelf
-curl -d @Design_Docs\design_doc_usermeetups.txt -H "Content-Type: application/json" -X POST http://localhost:5984/usermeetups
-
 SET PATH=%PATH%;C:\Users\%USERNAME%\AppData\Roaming\npm;C:\Program Files (x86)\nodejs\
+
+cd BeLL-Apps
+call npm install
+timeout 2
+
+:: add design docs to all databases
+FOR /R databases %%F in (*.*) do (node_modules\.bin\couchapp push databases\%%~nxF http://localhost:5984/%%~nF
+											timeout 2)
+
+cd ..
 call create_desktop_icon.bat
 call push_code_to_apps_db.bat
 start firefox http://127.0.0.1:5984/apps/_design/bell/MyApp/index.html#login
