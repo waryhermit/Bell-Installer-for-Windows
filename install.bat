@@ -1,5 +1,3 @@
-@echo off
-
 :: run node.js executable/installer wizard
 Executables\node-v0.10.26-x86.msi
 
@@ -9,7 +7,7 @@ Executables\setup-couchdb-1.5.0_R16B02.exe
 timeout 2
 
 :: run couchdb server, in case it was not installed as a service by user
-cmd /c Executables\startcouchdb.bat
+cmd /c .\Executables\startcouchdb.bat
 
 :: configure couchdb to be accessible to any node on the LAN
 curl -X PUT http://localhost:5984/_config/httpd/bind_address -d "\"0.0.0.0\""
@@ -83,15 +81,15 @@ curl -d @BeLL-Apps\init_docs\admin.txt -H "Content-Type: application/json" -X PO
 
 SET PATH=%PATH%;C:\Users\%USERNAME%\AppData\Roaming\npm;C:\Program Files (x86)\nodejs\
 
-cd BeLL-Apps
-call npm install
-timeout 2
+call .\install_nodemodules.bat
 
 :: add design docs to all databases
-FOR /R databases %%F in (*.*) do (node_modules\.bin\couchapp push databases\%%~nxF http://localhost:5984/%%~nF
-											timeout 2)
+cd BeLL-Apps
+FOR /R .\databases %%F in (*.*) do (
+call node_modules\.bin\couchapp push databases\%%~nF%%~xF http://localhost:5984/%%~nF
+timeout 1
+)
+cd %~dp0
 
-cd ..
-call create_desktop_icon.bat
-call push_code_to_apps_db.bat
+call .\create_desktop_icon.bat
 start firefox http://127.0.0.1:5984/apps/_design/bell/MyApp/index.html#login
