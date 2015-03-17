@@ -1,3 +1,5 @@
+@echo off
+
 :: run node.js executable/installer wizard
 Executables\node-v0.10.26-x86.msi
 
