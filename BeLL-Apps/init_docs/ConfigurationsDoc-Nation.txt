@@ -1,0 +1,12 @@
+{
+    "name":"NationBell",
+    "nationName":"nationbell-qa",
+    "code":"nationbell",
+    "type":"nation",
+    "nationUrl":"nationbell-qa.ole.org:5986",
+    "version":"0.11.33",
+    "notes":"Nation Bell",
+    "availableLanguages":["English","French","Arabic","Urdu"],
+    "currentLanguage":"English"
+}
+

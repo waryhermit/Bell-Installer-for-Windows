@@ -6,6 +6,12 @@ Executables\node-v0.10.26-x86.msi
 :: run couchdb executable/installer wizard
 Executables\setup-couchdb-1.5.0_R16B02.exe
 
+:: run Ghostscript installer wizard
+Executables\gs914w64.exe
+
+:: run GraphicsMagick installer wizard
+Executables\GraphicsMagick-1.3.19-Q16-win64.exe
+
 timeout 2
 
 :: run couchdb server, in case it was not installed as a service by user
@@ -92,6 +98,8 @@ call node_modules\.bin\couchapp push databases\%%~nF%%~xF http://localhost:5984/
 timeout 1
 )
 cd %~dp0
+
+start Launch_PDFOptimizer.bat
 
 call .\create_desktop_icon.bat
 start firefox http://127.0.0.1:5984/apps/_design/bell/MyApp/index.html#login
