@@ -56,6 +56,11 @@ curl -X PUT http://localhost:5984/coursestep
 curl -X PUT http://localhost:5984/groups
 curl -X PUT http://localhost:5984/resources
 
+:: Move specific Dosign Docs from Databases to anywhere else
+move BeLL-Apps\databases\communities.js BeLL-Apps\communities.js
+move BeLL-Apps\databases\languages.js BeLL-Apps\languages.js
+move BeLL-Apps\databases\configurations.js BeLL-Apps\configurations.js
+
 SET PATH=%PATH%;C:\Users\%USERNAME%\AppData\Roaming\npm;C:\Program Files (x86)\nodejs\
 
 call .\install_nodemodules.bat
@@ -65,6 +70,11 @@ FOR /R BeLL-Apps\databases %%F in (*.*) do (
 call BeLL-Apps\node_modules\.bin\couchapp push BeLL-Apps\databases\%%~nxF http://localhost:5984/%%~nF
 timeout 1
 )
+
+:: Move specific Dosign Docs back to databases
+move BeLL-Apps\communities.js BeLL-Apps\databases\communities.js
+move BeLL-Apps\languages.js BeLL-Apps\databases\languages.js
+move BeLL-Apps\configurations.js BeLL-Apps\databases\configurations.js
 
 start Launch_PDFOptimizer.bat
 
