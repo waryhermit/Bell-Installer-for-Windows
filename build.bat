@@ -4,4 +4,3 @@ curl -LOk https://github.com/open-learning-exchange/BeLL-Apps/archive/0.11.39.zi
 timeout 15
 move BeLL-Apps-0.11.39 BeLL-Apps
 del /f 0.11.39.zip
-call install_nodemodules.bat
