@@ -31,9 +31,9 @@ FOR /R BeLL-Apps\databases %%F in (*.*) do (
 )
 
 :: add bare minimal required data to couchdb for launching bell-apps smoothly
+curl -d @BeLL-Apps\init_docs\languages-Arabic.txt -H "Content-Type: application/json" -X POST http://localhost:5984/languages
 curl -d @BeLL-Apps\init_docs\languages.txt -H "Content-Type: application/json" -X POST http://localhost:5984/languages
 curl -d @BeLL-Apps\init_docs\languages-Urdu.txt -H "Content-Type: application/json" -X POST http://localhost:5984/languages
-curl -d @BeLL-Apps\init_docs\languages-Arabic.txt -H "Content-Type: application/json" -X POST http://localhost:5984/languages
 curl -d @BeLL-Apps\init_docs\ConfigurationsDoc-Community.txt -H "Content-Type: application/json" -X POST http://localhost:5984/configurations
 curl -d @BeLL-Apps\init_docs\admin.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
 
