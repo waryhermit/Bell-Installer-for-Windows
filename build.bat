@@ -1,6 +1,6 @@
 7z920.exe
-curl -LOk https://github.com/open-learning-exchange/BeLL-Apps/archive/0.12.17.zip
-7z.exe x 0.12.17.zip
+curl -LOk https://github.com/open-learning-exchange/BeLL-Apps/archive/0.12.18.zip
+7z.exe x 0.12.18.zip
 timeout 15
-move BeLL-Apps-0.12.17 BeLL-Apps
-del /f 0.12.17.zip
+move BeLL-Apps-0.12.18 BeLL-Apps
+del /f 0.12.18.zip
