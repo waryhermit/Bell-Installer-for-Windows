@@ -37,7 +37,7 @@ FOR /R BeLL-Apps\init_docs\languages %%F in (*.*) do (
 
 :: add bare minimal required data to couchdb for launching bell-apps smoothly
 curl -d @BeLL-Apps\init_docs\ConfigurationsDoc-Community.txt -H "Content-Type: application/json" -X POST http://localhost:5984/configurations
-curl -d @BeLL-Apps\init_docs\admin.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
+:: curl -d @BeLL-Apps\init_docs\admin.txt -H "Content-Type: application/json" -X POST http://localhost:5984/members
 
 :: delete empty dbs we want to replace with Starter data dbs
 curl -X DELETE http://localhost:5984/collectionlist
