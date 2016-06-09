@@ -83,4 +83,4 @@ move BeLL-Apps\configurations.js BeLL-Apps\databases\configurations.js
 start Launch_PDFOptimizer.bat
 
 call .\create_desktop_icon.bat
-start firefox http://127.0.0.1:5984/apps/_design/bell/MyApp/index.html#login
+start firefox http://127.0.0.1:5984/apps/_design/bell/MyApp/index.html#admin/add
