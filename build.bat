@@ -2,5 +2,5 @@
 curl -LOk https://github.com/open-learning-exchange/BeLL-Apps/archive/0.12.34.zip
 7z.exe x 0.12.34.zip
 timeout 15
-move BeLL-Apps-0.12.34 BeLL-Apps
+move BeLL-Apps-0.12.35 BeLL-Apps
 del /f 0.12.34.zip
