@@ -1,0 +1,27 @@
+.btable{
+    border-spacing: 0px;
+    width:100%;
+}
+.btable .btn{
+
+    display: inline-block;
+}
+
+.btable-striped tbody > tr:nth-child(2n+1) > td, .btable-striped tbody > tr:nth-child(2n+1) > th {
+    background-color: #F9F9F9;
+}
+
+.addNation-from{width:600px;height:700px;background-color:red}
+.bbf-error{color:red}
+.addNation-heading{margin-left:30%;text-decoration:underline}
+.addNation-btn{color:red}
+input{width:40%;height:20px}
+.bbf-editor input{width: 206px;}
+.field-Url{margin-left:50%;margin-top:-50px}
+.saveQuestionButton{
+    height:auto;
+}
+.textBoxesOnSurvey{
+    height: 20px;
+    width:30%;
+}
